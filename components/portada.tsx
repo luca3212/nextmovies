@@ -85,13 +85,17 @@ const Portada: FC<PortadaProps> = ({ moviesProps }) => {
   };
 
   useEffect(() => {
-    setMovieMain(dataMovies[focusMovie]);
-
-    const timeoutId = setTimeout(() => handleClick(1), 5000);
+    const timeoutId = setTimeout(() => {
+      setFocusMovie((prevFocus) => (prevFocus + 1) % 5);
+    }, 5000);
 
     return () => {
       clearTimeout(timeoutId);
     };
+  }, [focusMovie]);
+
+  useEffect(() => {
+    setMovieMain(dataMovies[focusMovie]);
   }, [focusMovie, dataMovies]);
 
   return (
@@ -105,6 +109,7 @@ const Portada: FC<PortadaProps> = ({ moviesProps }) => {
         className={styles.imagenPortada}
       >
         <Image
+          key={movieMain.id}
           className={styles.imagenFondo}
           alt="imagen Portada"
           src={`https://image.tmdb.org/t/p/original${movieMain.backdrop_path}`}
