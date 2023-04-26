@@ -1,0 +1,44 @@
+.containCenter {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.containLogos {
+  width: 50%;
+
+  h4 {
+    font-weight: 400;
+    font-size: 1rem;
+    margin-bottom: 25px;
+  }
+  .containSVG {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    align-items: center;
+    a {
+      width: 120px;
+      .logos {
+        width: 100%;
+        height: max-content;
+      }
+    }
+  }
+}
+
+.containCopy {
+  p {
+    text-align: right;
+    line-height: 1.5rem;
+    color: var(--colorGray);
+    a {
+      color: var(--colorPrimary);
+    }
+  }
+}

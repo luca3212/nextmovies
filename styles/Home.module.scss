@@ -1,0 +1,15 @@
+.centerLista {
+  width: 90%;
+  height: 100%;
+  max-width: 1200px;
+  margin: 50px auto;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 25px;
+    font-weight: 600;
+  }
+  p {
+    color: var(--colorGray);
+  }
+}

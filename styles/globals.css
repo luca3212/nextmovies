@@ -1,26 +1,77 @@
-html,
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
+
+/* Light 300
+Regular 400
+SemiBold 600
+Bold 700 */
+
+:root {
+  --colorPrimary: #ab6aff;
+  --colorDark: #0d0d0e;
+  --colorGray: #f3f3f3;
+  --colorLight: #ffffff;
+
+  --colorYellow: #fed530;
+
+  --text-primary: #cacde8;
+  --text-secondary: #484b6a;
+
+  --filterDrop: drop-shadow(2px 1px 1px #2a2a2a);
+}
+
+[data-theme="dark"] {
+  --bg-primary: #161722;
+  --bg-secondary: #25273c;
+  --text-primary: #cacde8;
+  --text-secondary: #484b6a;
+  --text-gray: #9394a5;
+  --text-gray-hover: rgb(228, 229, 241);
+
+  --bg-desktop: url("/fondos/bg-desktop-dark.jpg");
+  --bg-mobile: url("/fondos/bg-mobile-dark.jpg");
+}
+
+html {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background: var(--colorDark);
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
 }
 
 a {
-  color: inherit;
+  color: var(--colorLight);
   text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--colorLight);
 }
 
 * {
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+body::-webkit-scrollbar {
+  width: 5px;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: rgb(0, 0, 0, 0.8);
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--colorDark);
+  border-radius: 10px;
 }

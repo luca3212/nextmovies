@@ -1,0 +1,19 @@
+.containLayout {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.containMenu {
+  position: fixed;
+  width: 100%;
+  z-index: 50;
+}
+
+.containFooter {
+  width: 100%;
+  padding: 50px 0;
+  background: #111113;
+}

@@ -1,0 +1,195 @@
+.containPortada {
+  width: 100%;
+  min-height: 90vh;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 50%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    background: linear-gradient(180deg, transparent, var(--colorDark));
+  }
+}
+
+.imagenPortada {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  .imagenFondo {
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    object-fit: cover;
+    object-position: top;
+    filter: brightness(0.5);
+  }
+}
+
+.containCenter {
+  width: 90%;
+  height: 100%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.containInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  h2 {
+    color: var(--colorLight);
+    font-size: 3rem;
+    font-weight: 700;
+    max-width: 70%;
+    filter: drop-shadow(2px 1px 1px #2a2a2a);
+  }
+}
+
+.infoMovie {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: var(--colorGray);
+
+  gap: 20px;
+
+  .votoMovie {
+    display: flex;
+    align-items: center;
+    filter: drop-shadow(2px 1px 1px #2a2a2a);
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+    strong {
+      color: var(--colorLight);
+      margin-right: 5px;
+    }
+    p {
+      margin-left: 5px;
+    }
+  }
+
+  .genero {
+    margin-left: 10px;
+    p {
+      // color: #cacde8;
+      color: rgba(255, 255, 255, 0.7);
+      filter: drop-shadow(2px 1px 1px #2a2a2a);
+    }
+  }
+  .fecha {
+    p {
+      color: rgba(255, 255, 255, 0.7);
+      filter: drop-shadow(2px 1px 1px #2a2a2a);
+    }
+  }
+}
+
+.containDescripcion {
+  p {
+    color: var(--colorGray);
+    font-weight: 600;
+    width: 70%;
+    max-width: 750px;
+    line-height: 1.5rem;
+    filter: drop-shadow(2px 1px 1px #2a2a2a);
+  }
+}
+
+.containBton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+
+  a {
+    color: var(--colorDark);
+    background: #f0f0f0;
+  }
+
+  .btonInicio {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    border: none;
+    border-radius: 4px;
+    padding: 12px 16px;
+
+    font-weight: 600;
+    cursor: pointer;
+
+    width: 135px;
+    justify-content: space-between;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+    p {
+      flex-grow: 1;
+      text-align: center;
+      font-weight: 600;
+      font-size: 14px;
+    }
+  }
+}
+
+//btones posicion peliculas
+.btonArrow {
+  position: absolute;
+  width: max-content;
+  border: none;
+  background: #1a1a1a;
+  padding: 14px 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 4px;
+
+  cursor: pointer;
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+.btonLeft {
+  left: 5px;
+}
+.btonRight {
+  right: 5px;
+}
+
+// posiciones de slice
+.containCirculos {
+  position: absolute;
+  bottom: 25px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.posicion {
+  height: 10px;
+  border-radius: 8px;
+  transition: all 500ms ease-in-out;
+}
