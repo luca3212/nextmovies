@@ -154,7 +154,7 @@ const GridMovies: FC<moreMovies> = ({
               <ChevronLeft />
             </button>
             <h4>Resultados sobre:</h4>
-            <p>'{searchActiva.text}'</p>
+            <p>&quot;{searchActiva.text}&quot;</p>
           </div>
         ) : (
           <h2>Mas Populares</h2>
