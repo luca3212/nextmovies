@@ -47,7 +47,7 @@ const Portada: FC<PortadaProps> = ({ moviesProps }) => {
 
   useEffect(() => {
     setIsFavorita(idFavorito(movieMain.id));
-  }, [movieMain, listaFavoritos]);
+  }, [movieMain, listaFavoritos, idFavorito]);
 
   const handleClick = (valor: number) => {
     if (valor > 0) {
@@ -92,7 +92,7 @@ const Portada: FC<PortadaProps> = ({ moviesProps }) => {
     return () => {
       clearTimeout(timeoutId);
     };
-  }, [focusMovie]);
+  }, [focusMovie, dataMovies]);
 
   return (
     <div className={styles.containPortada}>

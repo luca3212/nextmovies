@@ -30,6 +30,7 @@ import VideoList from "../../components/YouTubeVideo";
 import Spinner from "../../components/spinner";
 import ImagenNo from "../../components/icons/imagenNo";
 import FotoNo from "../../components/icons/fotoNo";
+import Link from "next/link";
 
 type PageProps = {
   detallesMovie: DataPage;
@@ -177,7 +178,7 @@ export default function Page({
 
                 <div className={styles.containBton}>
                   {linkMovie && (
-                    <a
+                    <Link
                       className={styles.btonInicio}
                       href={linkMovie}
                       target="_blank"
@@ -185,7 +186,7 @@ export default function Page({
                     >
                       <Play />
                       <p>Donde ver</p>
-                    </a>
+                    </Link>
                   )}
                   <button
                     onClick={handleFavorito}

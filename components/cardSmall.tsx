@@ -25,7 +25,7 @@ const CardSmall: FC<CardProps> = ({ moviesProps }) => {
 
   useEffect(() => {
     setIsFavorita(idFavorito(moviesProps.id));
-  }, [moviesProps, listaFavoritos]);
+  }, [moviesProps, listaFavoritos, idFavorito]);
 
   useEffect(() => {
     setLoadingImg(moviesProps.poster_path != null ? true : false);

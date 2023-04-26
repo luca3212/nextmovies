@@ -2,6 +2,7 @@ import React from "react";
 import Logo from "./icons/logo";
 import styles from "../styles/menu.module.scss";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 export default function Menu() {
   const router = useRouter();
@@ -16,18 +17,10 @@ export default function Menu() {
         <Logo />
       </div>
       <nav className={styles.containNav}>
-        <a href="/#inicio" onClick={() => handleLinkClick("/#inicio")}>
-          Inicio
-        </a>
-        <a href="/#top-movies" onClick={() => handleLinkClick("/#top-movies")}>
-          Top Movies
-        </a>
-        <a href="/#populares" onClick={() => handleLinkClick("/#populares")}>
-          Populares
-        </a>
-        <a href="/#mi-lista" onClick={() => handleLinkClick("/#mi-lista")}>
-          Mi Lista
-        </a>
+        <Link href="/#inicio">Inicio</Link>
+        <Link href="/#top-movies">Top Movies</Link>
+        <Link href="/#populares">Populares</Link>
+        <Link href="/#mi-lista">Mi Lista</Link>
       </nav>
     </div>
   );
