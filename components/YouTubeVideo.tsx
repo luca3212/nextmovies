@@ -16,6 +16,7 @@ const VideoList: React.FC<Props> = ({ videoKey, title }) => {
         key={videoKey}
         videoId={videoKey}
         // opts={{ width: "640", height: "360" }}
+        opts={{ playerVars: { origin: "https://nextmovies-five.vercel.app/" } }}
         className={styles.containVideo}
       />
     </div>

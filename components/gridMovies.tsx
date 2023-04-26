@@ -121,7 +121,6 @@ const GridMovies: FC<moreMovies> = ({
     event.preventDefault();
 
     if (inputValue.trim() != "") {
-      console.log(inputValue);
       fetchSearchMovies(inputValue);
       setSearchActiva({
         status: true,
