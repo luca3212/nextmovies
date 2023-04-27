@@ -3,9 +3,16 @@ import Footer from "./footer";
 import Menu from "./menu";
 
 import styles from "../styles/layout.module.scss";
+import MenuMobile from "./menuMobile";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [bgMenu, setBgMenu] = useState<boolean>(false);
+
+  const [isActive, setIsActive] = useState<boolean>(false);
+
+  const handleToggle = () => {
+    setIsActive(!isActive);
+  };
 
   const menuStyle = useMemo(
     () => ({
@@ -31,8 +38,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className={styles.containLayout}>
       <div className={styles.containMenu} style={menuStyle}>
-        <Menu />
+        <Menu toggle={handleToggle} state={isActive} />
       </div>
+      {isActive && <MenuMobile toggle={handleToggle} />}
+
       {children}
       <div className={styles.containFooter}>
         <Footer />

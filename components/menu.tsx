@@ -3,8 +3,15 @@ import Logo from "./icons/logo";
 import styles from "../styles/menu.module.scss";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import MenuIcon from "./icons/menu";
+import Close from "./icons/close";
 
-export default function Menu() {
+type Props = {
+  toggle: () => void;
+  state: boolean;
+};
+
+export default function Menu({ toggle, state }: Props) {
   const router = useRouter();
 
   const handleLinkClick = (href: string) => {
@@ -22,6 +29,17 @@ export default function Menu() {
         <Link href="/#populares">Populares</Link>
         <Link href="/#mi-lista">Mi Lista</Link>
       </nav>
+      <div className={styles.btonMenu}>
+        {state ? (
+          <button onClick={toggle}>
+            <Close />
+          </button>
+        ) : (
+          <button onClick={toggle}>
+            <MenuIcon />
+          </button>
+        )}
+      </div>
     </div>
   );
 }

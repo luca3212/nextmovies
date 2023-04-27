@@ -24,3 +24,43 @@
     color: var(--colorGray);
   }
 }
+
+.btonMenu {
+  display: none;
+
+  button {
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .btonMenu {
+    display: flex;
+  }
+
+  .containNav {
+    display: none;
+  }
+
+  // .containNav {
+  //   position: fixed;
+  //   top: 0;
+  //   left: 0;
+  //   bottom: 0;
+  //   right: 0;
+  //   background-color: var(--colorDark);
+  //   height: 100%;
+
+  //   flex-direction: column;
+  //   align-items: center;
+  //   justify-content: center;
+  // }
+}

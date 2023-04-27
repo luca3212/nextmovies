@@ -41,6 +41,9 @@ body {
   background: var(--colorDark);
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
+
+  /* eliminar despues */
+  overflow-x: hidden;
 }
 
 a {
@@ -74,4 +77,11 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
   background: var(--colorDark);
   border-radius: 10px;
+}
+
+@media screen and (max-width: 767px) {
+  html,
+  body {
+    font-size: 14px;
+  }
 }
