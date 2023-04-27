@@ -45,7 +45,7 @@
   width: 100%;
   display: flex;
   gap: 35px;
-  margin-top: 25vh; //revisar!!!
+  margin-top: 25vh;
   align-items: flex-end;
   .containImagen {
     img {
@@ -97,12 +97,7 @@
   display: flex;
   align-items: center;
   gap: 25px;
-  // button {
-  //   padding: 6px 10px;
-  //   border: none;
-  //   margin-right: 10px;
-  //   border-radius: 4px;
-  // }
+
   .btonInicio {
     display: flex;
     flex-direction: row;
@@ -199,4 +194,89 @@
   justify-content: space-between;
 
   padding-bottom: 50px;
+}
+
+@media screen and (max-width: 1023px) {
+  .infoPeli {
+    h1 {
+      font-size: 2.5rem;
+    }
+  }
+  .bodyPage {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .containDescripcion {
+    width: 100%;
+    h3 {
+      font-size: 1.5rem;
+    }
+  }
+  .containIntegrantes {
+    width: 100%;
+    h3 {
+      font-size: 1.5rem;
+    }
+    .listaActores {
+      justify-content: flex-start;
+      gap: 30px;
+    }
+  }
+
+  .containTrailers {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .headPage {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 90px;
+  }
+  .infoPeli {
+    width: 100%;
+    h1 {
+      font-size: 2rem;
+    }
+  }
+
+  .containIntegrantes {
+    .listaActores {
+      gap: 15px;
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .containPage {
+    &::after {
+      height: 18%;
+    }
+  }
+
+  .imagenPortada {
+    height: 18%;
+  }
+
+  .containBton {
+    justify-content: space-between;
+    gap: 10px;
+
+    .btonInicio {
+      width: 50%;
+    }
+  }
+
+  .containIntegrantes {
+    .listaActores {
+      gap: 10px;
+      li {
+        h4 {
+          font-size: 12px;
+        }
+      }
+    }
+  }
 }

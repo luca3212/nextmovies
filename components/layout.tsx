@@ -16,10 +16,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
   const menuStyle = useMemo(
     () => ({
-      background: bgMenu ? "#1a1a1a" : "transparent",
-      // : "linear-gradient(360deg, transparent, #0d0d0e)",
+      background: isActive ? "#1a1a1a" : bgMenu ? "#1a1a1a" : "transparent",
     }),
-    [bgMenu]
+    [isActive, bgMenu]
   );
 
   const handleScroll = useCallback(() => {
@@ -34,6 +33,20 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     document.addEventListener("scroll", handleScroll);
     return () => document.removeEventListener("scroll", handleScroll);
   }, [handleScroll]);
+
+  useEffect(() => {
+    function handleResize() {
+      if (window.innerWidth >= 768) {
+        setIsActive(false);
+      }
+    }
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <div className={styles.containLayout}>

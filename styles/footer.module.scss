@@ -42,3 +42,24 @@
     }
   }
 }
+
+@media screen and (max-width: 767px) {
+  .containCenter {
+    flex-direction: column;
+    gap: 35px;
+  }
+
+  .containLogos {
+    width: 100%;
+    text-align: center;
+    .containSVG {
+      justify-content: center;
+    }
+  }
+  .containCopy {
+    width: 100%;
+    p {
+      text-align: center;
+    }
+  }
+}
