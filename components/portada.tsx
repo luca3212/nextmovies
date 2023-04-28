@@ -84,15 +84,15 @@ const Portada: FC<PortadaProps> = ({ moviesProps }) => {
     }
   };
 
-  // useEffect(() => {
-  //   const timeoutId = setTimeout(() => {
-  //     setFocusMovie((prevFocus) => (prevFocus + 1) % 5);
-  //   }, 5000);
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setFocusMovie((prevFocus) => (prevFocus + 1) % 5);
+    }, 5000);
 
-  //   return () => {
-  //     clearTimeout(timeoutId);
-  //   };
-  // }, [focusMovie]);
+    return () => {
+      clearTimeout(timeoutId);
+    };
+  }, [focusMovie]);
 
   useEffect(() => {
     setMovieMain(dataMovies[focusMovie]);
@@ -114,7 +114,7 @@ const Portada: FC<PortadaProps> = ({ moviesProps }) => {
           alt="imagen Portada"
           src={`https://image.tmdb.org/t/p/original${movieMain.backdrop_path}`}
           fill
-          quality={75}
+          quality={80}
           priority
         />
       </motion.div>

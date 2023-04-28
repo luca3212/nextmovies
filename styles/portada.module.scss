@@ -83,11 +83,9 @@
       margin-left: 5px;
     }
   }
-
   .genero {
     margin-left: 10px;
     p {
-      // color: #cacde8;
       color: rgba(255, 255, 255, 0.7);
       filter: drop-shadow(2px 1px 1px #2a2a2a);
     }
@@ -192,4 +190,86 @@
   height: 10px;
   border-radius: 8px;
   transition: all 500ms ease-in-out;
+}
+
+@media screen and (max-width: 1023px) {
+  .containInfo {
+    gap: 15px;
+    h2 {
+      font-size: 2rem;
+    }
+  }
+  .containDescripcion {
+    p {
+      width: 75%;
+      line-height: 1.5rem;
+    }
+  }
+
+  .btonArrow {
+    width: 4%;
+    padding: 14px 0;
+  }
+  .btonLeft {
+    left: 0.5%;
+  }
+  .btonRight {
+    right: 0.5%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .btonLeft {
+    left: 0;
+    border-radius: 0 4px 4px 0;
+  }
+  .btonRight {
+    right: 0;
+    border-radius: 4px 0 0 4px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .containInfo {
+    h2 {
+      max-width: none;
+    }
+  }
+  .containDescripcion {
+    display: none;
+  }
+  .infoMovie {
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 5px;
+    .genero {
+      margin-left: 0;
+    }
+  }
+  .containBton {
+    justify-content: space-between;
+    gap: 10px;
+    .btonInicio {
+      width: 50%;
+    }
+  }
+  .btonArrow {
+    width: max-content;
+    padding: 12px;
+    bottom: 15%;
+  }
+  .imagenPortada {
+    height: 80%;
+    top: 0;
+    .imagenFondo {
+      filter: brightness(0.7);
+    }
+  }
+  .containPortada {
+    &::after {
+      height: 80%;
+      top: 0;
+    }
+  }
 }

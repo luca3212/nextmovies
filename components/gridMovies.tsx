@@ -1,10 +1,10 @@
 import React, { FC, useState, useRef } from "react";
 import { Movie } from "../types/movie";
 import styles from "../styles/gridMovies.module.scss";
-import CardSmall from "./cardSmall";
 import ChevronLeft from "./icons/chevronLeft";
 import ChevronRight from "./icons/chevronRight";
 import Buscar from "./icons/buscar";
+import CardGrid from "./cardGrid";
 
 type moreMovies = {
   moviesLista: Movie[];
@@ -179,7 +179,7 @@ const GridMovies: FC<moreMovies> = ({
       <div className={styles.containMovies}>
         {movieView.length != 0 ? (
           movieView.map((movie: Movie, index) => (
-            <CardSmall key={index} moviesProps={movie} />
+            <CardGrid key={index} moviesProps={movie} />
           ))
         ) : (
           <p>No se encontraron películas</p>
