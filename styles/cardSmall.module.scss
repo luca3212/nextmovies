@@ -5,7 +5,9 @@
 
   &:hover {
     .containBtonLike {
-      display: block;
+      .btonNoFav {
+        display: block;
+      }
     }
   }
 }
@@ -17,7 +19,6 @@
   border-radius: 4px;
   .imagenFondo {
     width: 100%;
-    // height: auto;
     border-radius: 4px;
 
     user-select: none;
@@ -66,7 +67,7 @@
 }
 
 .containBtonLike {
-  display: none;
+  display: block;
   position: absolute;
   top: 10px;
   right: 10px;
@@ -79,6 +80,10 @@
     background: none;
     cursor: pointer;
   }
+}
+
+.btonNoFav {
+  display: none;
 }
 
 .containTitle {
@@ -97,20 +102,12 @@
 
 @media screen and (max-width: 768px) {
   .containBtonLike {
-    display: block;
     top: 5px;
     right: 5px;
   }
-
-  // .containCard {
-  //   width: 180px;
-  // }
-  // .containImagen {
-  //   height: auto;
-  //   .imagenFondo {
-  //     height: auto;
-  //   }
-  // }
+  .btonNoFav {
+    display: block;
+  }
 }
 
 @media screen and (max-width: 425px) {

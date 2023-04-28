@@ -82,11 +82,11 @@ const CardGrid: FC<CardProps> = ({ moviesProps }) => {
       </div>
       <div className={styles.containBtonLike}>
         {isFavorita ? (
-          <button onClick={handleDeleteFavorito}>
+          <button onClick={handleDeleteFavorito} className={styles.btonFav}>
             <FavTrue />
           </button>
         ) : (
-          <button onClick={handleAddFavorito}>
+          <button onClick={handleAddFavorito} className={styles.btonNoFav}>
             <FavFalse />
           </button>
         )}

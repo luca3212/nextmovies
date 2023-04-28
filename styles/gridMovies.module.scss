@@ -87,7 +87,6 @@
         text-align: center;
         font-weight: 600;
         font-size: 1rem;
-        //   color: var(--colorGray);
       }
     }
   }
@@ -99,11 +98,6 @@
   margin: auto;
 
   display: grid;
-  // grid-template-columns: repeat(auto-fill, 200px);
-  // justify-content: space-between;
-  // column-gap: 20px;
-  // row-gap: 40px;
-
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 50px 20px;
 
@@ -170,16 +164,20 @@
     align-items: stretch;
     gap: 20px;
     form {
-      justify-content: flex-end;
+      width: 100%;
+      input {
+        width: 70%;
+        padding: 8px;
+      }
+      button {
+        width: 30%;
+        padding: 8px;
+      }
+    }
+    h2 {
+      font-size: 1.5rem;
     }
   }
-
-  // .containMovies {
-  //   //grid-template-columns: repeat(auto-fill, 150px);
-
-  //   //este vaaa
-  //   grid-template-columns: repeat(auto-fit, minmax(130px, 2fr));
-  // }
 }
 
 @media screen and (max-width: 425px) {

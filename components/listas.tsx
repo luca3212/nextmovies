@@ -20,7 +20,6 @@ const Listas: FC<topWeek> = ({ moviesLista, titleSeccion }) => {
 
   useEffect(() => {
     animation.start({ x: 0 });
-    //setWidth(carousel!.current!.scrollWidth - carousel!.current!.offsetWidth);
     setWidth(lista!.current!.scrollWidth - carousel!.current!.offsetWidth);
   }, [moviesLista]);
 

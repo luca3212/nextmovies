@@ -19,18 +19,6 @@ Bold 700 */
   --filterDrop: drop-shadow(2px 1px 1px #2a2a2a);
 }
 
-[data-theme="dark"] {
-  --bg-primary: #161722;
-  --bg-secondary: #25273c;
-  --text-primary: #cacde8;
-  --text-secondary: #484b6a;
-  --text-gray: #9394a5;
-  --text-gray-hover: rgb(228, 229, 241);
-
-  --bg-desktop: url("/fondos/bg-desktop-dark.jpg");
-  --bg-mobile: url("/fondos/bg-mobile-dark.jpg");
-}
-
 html {
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
@@ -41,8 +29,6 @@ body {
   background: var(--colorDark);
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
-
-  /* eliminar despues */
   overflow-x: hidden;
 }
 

@@ -5,7 +5,9 @@
 
   &:hover {
     .containBtonLike {
-      display: block;
+      .btonNoFav {
+        display: block;
+      }
     }
   }
 }
@@ -71,7 +73,7 @@
 }
 
 .containBtonLike {
-  display: none;
+  display: block;
   position: absolute;
   top: 10px;
   right: 10px;
@@ -84,6 +86,10 @@
     background: none;
     cursor: pointer;
   }
+}
+
+.btonNoFav {
+  display: none;
 }
 
 .containTitle {
@@ -102,8 +108,10 @@
 
 @media screen and (max-width: 768px) {
   .containBtonLike {
-    display: block;
     top: 5px;
     right: 5px;
+  }
+  .btonNoFav {
+    display: block;
   }
 }

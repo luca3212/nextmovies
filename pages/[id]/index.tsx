@@ -236,7 +236,6 @@ export default function Page({
               </div>
             </div>
 
-            {/* evitando error cross */}
             <div className={styles.containTrailers}>
               {trailers != null &&
                 trailers.map((video, index) => (

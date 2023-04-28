@@ -24,3 +24,11 @@
   gap: 20px;
   cursor: grab;
 }
+
+@media screen and (max-width: 768px) {
+  .containCenter {
+    h2 {
+      font-size: 1.5rem;
+    }
+  }
+}

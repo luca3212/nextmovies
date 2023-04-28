@@ -13,7 +13,6 @@ import GridMovies from "../components/gridMovies";
 
 type HomeProps = {
   latestMovies: Movie[];
-  // popularMovies: Movie[];
   popularMovies: dataComplete;
   topRatedMovies: Movie[];
   weekTopMovies: Movie[];
@@ -89,7 +88,6 @@ export default function Home({
 
 export const getStaticProps: GetStaticProps<HomeProps> = async () => {
   try {
-    // Realiza las llamadas a la API de TMDB para obtener los datos necesarios
     const [
       latestMoviesResponse,
       popularMoviesResponse,
@@ -110,8 +108,6 @@ export const getStaticProps: GetStaticProps<HomeProps> = async () => {
       ),
     ]);
 
-    // Convierte las respuestas de la API a objetos JSON
-
     //en Cines
     const latestMovies = await latestMoviesResponse.json();
     //populares (actulizacion diaria)
@@ -121,11 +117,9 @@ export const getStaticProps: GetStaticProps<HomeProps> = async () => {
     //top de la semana
     const weekTopMovies = await weekTopMoviesResponse.json();
 
-    // Retorna los datos obtenidos como props para el componente Home
     return {
       props: {
         latestMovies: latestMovies.results,
-        // popularMovies: popularMovies.results,
         popularMovies: popularMovies,
         topRatedMovies: topRatedMovies.results,
         weekTopMovies: weekTopMovies.results,
@@ -133,7 +127,6 @@ export const getStaticProps: GetStaticProps<HomeProps> = async () => {
     };
   } catch (error) {
     console.error("Error al obtener datos de la API de TMDB:", error);
-    // Puedes manejar el error de acuerdo a tus necesidades, por ejemplo, redirigir a una página de error
     return {
       props: {
         latestMovies: [],

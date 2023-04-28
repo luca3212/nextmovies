@@ -1,13 +1,3 @@
-// export interface MovieSmall {
-//   id: number;
-//   title: string;
-//   poster: string;
-//   descripcion: string;
-//   fecha: string;
-//   duracion: number;
-//   back: string | null;
-// }
-
 export interface MovieSmall {
   id: number;
   title: string;
@@ -36,7 +26,7 @@ export type Movie = {
   original_title: string;
   overview: string;
   popularity: number;
-  poster_path: string | null; //cambio
+  poster_path: string | null;
   release_date: string;
   revenue: number;
   runtime: number;
@@ -103,12 +93,12 @@ export type DataPage = {
   imdb_id: string | null;
   original_language: string;
   original_title: string;
-  overview: string | null; //cambio
+  overview: string | null;
   popularity: number;
   poster_path: string | null;
   release_date: string;
   revenue: number;
-  runtime: number | null; //cambio
+  runtime: number | null;
   status: string;
   tagline: string | null;
   title: string;
