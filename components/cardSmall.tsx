@@ -69,8 +69,7 @@ const CardSmall: FC<CardProps> = ({ moviesProps }) => {
             className={styles.imagenFondo}
             alt="imagen listas"
             src={`https://image.tmdb.org/t/p/w500${moviesProps.poster_path}`}
-            width={200}
-            height={300}
+            fill
             quality={70}
             draggable="false"
             onLoadingComplete={handleCompleted}
