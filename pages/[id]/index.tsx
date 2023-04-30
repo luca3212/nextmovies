@@ -220,7 +220,6 @@ export default function Page({
                             key={actor.id}
                             alt="Foto actor"
                             src={`https://image.tmdb.org/t/p/original${actor.profile_path}`}
-                            priority
                             width={64}
                             height={96}
                             quality={85}

@@ -74,7 +74,6 @@ const CardSmall: FC<CardProps> = ({ moviesProps }) => {
             quality={70}
             draggable="false"
             onLoadingComplete={handleCompleted}
-            priority
           />
         ) : (
           <ImagenNo />
