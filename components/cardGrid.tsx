@@ -74,6 +74,7 @@ const CardGrid: FC<CardProps> = ({ moviesProps }) => {
             quality={70}
             draggable="false"
             onLoadingComplete={handleCompleted}
+            priority
           />
         ) : (
           <ImagenNo />
