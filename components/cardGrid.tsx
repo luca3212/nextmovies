@@ -68,13 +68,12 @@ const CardGrid: FC<CardProps> = ({ moviesProps }) => {
             key={moviesProps.id}
             className={styles.imagenFondo}
             alt="imagen Portada"
-            src={`https://image.tmdb.org/t/p/original${moviesProps.poster_path}`}
+            src={`https://image.tmdb.org/t/p/w500${moviesProps.poster_path}`}
             width={200}
             height={300}
             quality={70}
             draggable="false"
             onLoadingComplete={handleCompleted}
-            priority
           />
         ) : (
           <ImagenNo />
