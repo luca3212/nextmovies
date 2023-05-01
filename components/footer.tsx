@@ -9,7 +9,7 @@ export default function Footer() {
   return (
     <div className={styles.containCenter}>
       <div className={styles.containLogos}>
-        <h4>Información y enlaces obtenidos desde:</h4>
+        <p>Información y enlaces obtenidos desde:</p>
         <div className={styles.containSVG}>
           <Link
             href="https://www.themoviedb.org/"

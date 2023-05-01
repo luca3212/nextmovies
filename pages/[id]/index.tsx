@@ -147,7 +147,7 @@ export default function Page({
                     key={detallesMovie.id}
                     className={styles.imagenFondo}
                     alt="imagen Portada"
-                    src={`https://image.tmdb.org/t/p/original${detallesMovie.poster_path}`}
+                    src={`https://image.tmdb.org/t/p/w500${detallesMovie.poster_path}`}
                     width={200}
                     height={300}
                     quality={85}
