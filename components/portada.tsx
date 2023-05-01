@@ -87,7 +87,7 @@ const Portada: FC<PortadaProps> = ({ moviesProps }) => {
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       setFocusMovie((prevFocus) => (prevFocus + 1) % 5);
-    }, 5000);
+    }, 10000);
 
     return () => {
       clearTimeout(timeoutId);
@@ -99,36 +99,38 @@ const Portada: FC<PortadaProps> = ({ moviesProps }) => {
   }, [focusMovie, dataMovies]);
 
   return (
-    <div className={styles.containPortada}>
-      <motion.div
-        key={movieMain.id}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 1 }}
-        className={styles.imagenPortada}
-      >
-        <Image
-          key={movieMain.id}
-          className={styles.imagenFondo}
-          alt="imagen Portada"
-          src={`https://image.tmdb.org/t/p/original${movieMain.backdrop_path}`}
-          fill
-          quality={80}
-          priority
-          sizes="100vw"
-        />
-      </motion.div>
+    <AnimatePresence mode="wait">
+      <motion.div className={styles.containPortada} key={movieMain.id}>
+        <motion.div
+          // key={movieMain.id}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1 }}
+          className={styles.imagenPortada}
+        >
+          <Image
+            // key={movieMain.id}
+            className={styles.imagenFondo}
+            alt="imagen Portada"
+            src={`https://image.tmdb.org/t/p/original${movieMain.backdrop_path}`}
+            fill
+            quality={80}
+            priority
+            unoptimized={false}
+            sizes="100vw"
+          />
+        </motion.div>
 
-      <div className={styles.containCenter}>
-        <AnimatePresence mode="wait">
+        <div className={styles.containCenter}>
+          {/* <AnimatePresence mode="wait"> */}
           <motion.div
             className={styles.containInfo}
-            key={movieMain.id}
+            // key={movieMain.id}
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 50 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 1, delay: 0.2 }}
           >
             <div className={styles.containTitle}>
               <h2>{movieMain.title}</h2>
@@ -166,60 +168,61 @@ const Portada: FC<PortadaProps> = ({ moviesProps }) => {
               </button>
             </div>
           </motion.div>
-        </AnimatePresence>
-      </div>
+          {/* </AnimatePresence> */}
+        </div>
 
-      <button
-        className={styles.btonArrow + " " + styles.btonLeft}
-        onClick={() => handleClick(-1)}
-      >
-        <ChevronLeft />
-      </button>
-      <button
-        className={styles.btonArrow + " " + styles.btonRight}
-        onClick={() => handleClick(1)}
-      >
-        <ChevronRight />
-      </button>
+        <button
+          className={styles.btonArrow + " " + styles.btonLeft}
+          onClick={() => handleClick(-1)}
+        >
+          <ChevronLeft />
+        </button>
+        <button
+          className={styles.btonArrow + " " + styles.btonRight}
+          onClick={() => handleClick(1)}
+        >
+          <ChevronRight />
+        </button>
 
-      <div className={styles.containCirculos}>
-        <div
-          style={{
-            background: focusMovie === 0 ? "#ab6aff" : "#1a1a1a",
-            width: focusMovie === 0 ? "30px" : "10px",
-          }}
-          className={styles.posicion}
-        ></div>
-        <div
-          style={{
-            background: focusMovie === 1 ? "#ab6aff" : "#1a1a1a",
-            width: focusMovie === 1 ? "30px" : "10px",
-          }}
-          className={styles.posicion}
-        ></div>
-        <div
-          style={{
-            background: focusMovie === 2 ? "#ab6aff" : "#1a1a1a",
-            width: focusMovie === 2 ? "30px" : "10px",
-          }}
-          className={styles.posicion}
-        ></div>
-        <div
-          style={{
-            background: focusMovie === 3 ? "#ab6aff" : "#1a1a1a",
-            width: focusMovie === 3 ? "30px" : "10px",
-          }}
-          className={styles.posicion}
-        ></div>
-        <div
-          style={{
-            background: focusMovie === 4 ? "#ab6aff" : "#1a1a1a",
-            width: focusMovie === 4 ? "30px" : "10px",
-          }}
-          className={styles.posicion}
-        ></div>
-      </div>
-    </div>
+        <div className={styles.containCirculos}>
+          <div
+            style={{
+              background: focusMovie === 0 ? "#ab6aff" : "#1a1a1a",
+              width: focusMovie === 0 ? "30px" : "10px",
+            }}
+            className={styles.posicion}
+          ></div>
+          <div
+            style={{
+              background: focusMovie === 1 ? "#ab6aff" : "#1a1a1a",
+              width: focusMovie === 1 ? "30px" : "10px",
+            }}
+            className={styles.posicion}
+          ></div>
+          <div
+            style={{
+              background: focusMovie === 2 ? "#ab6aff" : "#1a1a1a",
+              width: focusMovie === 2 ? "30px" : "10px",
+            }}
+            className={styles.posicion}
+          ></div>
+          <div
+            style={{
+              background: focusMovie === 3 ? "#ab6aff" : "#1a1a1a",
+              width: focusMovie === 3 ? "30px" : "10px",
+            }}
+            className={styles.posicion}
+          ></div>
+          <div
+            style={{
+              background: focusMovie === 4 ? "#ab6aff" : "#1a1a1a",
+              width: focusMovie === 4 ? "30px" : "10px",
+            }}
+            className={styles.posicion}
+          ></div>
+        </div>
+      </motion.div>
+    </AnimatePresence>
   );
 };
 
