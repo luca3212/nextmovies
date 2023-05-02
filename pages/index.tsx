@@ -6,7 +6,7 @@ import { GetStaticProps } from "next";
 import Portada from "../components/portada";
 
 import Listas from "../components/listas";
-import { useEffect, useContext } from "react";
+import { useEffect, useContext, useState, useRef } from "react";
 
 import { FavoritoContext, TareasFavoritos } from "../contexts/ListaFavoritos";
 import GridMovies from "../components/gridMovies";
